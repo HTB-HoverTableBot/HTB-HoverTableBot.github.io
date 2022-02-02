@@ -7,7 +7,7 @@ const Section = (props) => (
     }`}
   >
     {(props.title || props.description) && (
-      <div className="mb-12 text-center">
+      <div className="mb-4 text-center">
         {props.title && (
           <h2 className="text-4xl text-gray-100 font-bold">{props.title}</h2>
         )}

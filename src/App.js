@@ -1,10 +1,20 @@
-import { Section } from './components/Section'
+import { Section } from './layout/Section'
 import { VerticalFeatureRow } from './components/VerticalRow';
+import { Footer } from './components/footer/Footer';
+import casterPicture from './images/caster.webp'
+import hoverboardPicture from './images/hover.webp'
+import headerPicture from './images/header.webp'
+import repoPicture from './images/mainrepo.webp'
 
 function App() {
+  let casterWheelDescription = [
+    "Fully modular caster wheel xacro file",
+    <br/>,
+    "Wheels can be modified according to the real dimensions "
+  ];
   return (
     <div className="relative bg-gray-900 overflow-hidden">
-      <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w lg:w-full lg:pb-28 xl:pb-32">
+      <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w lg:w-full lg:pb-20 xl:pb-10">
         <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
           <div className="text-center rounded-lg">
             <h1 className="text-4xl font-extrabold text-gray-100 sm:text-5xl md:text-6xl">
@@ -15,35 +25,62 @@ function App() {
             </p>
           </div>
       <div className="mx-auto w-full sm:w-1/2 p-6">
-        <img src="https://images.unsplash.com/photo-1468657988500-aca2be09f4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="alt text" />
+        <img src={headerPicture} alt="alt text" />
       </div>
         </main>
       </div>
+
       <Section
-        title="Features"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus malesuada nisi tellus, non imperdiet nisi tempor at."
+        description="We can imagine a mobile robot as a couple of engines and a controller.
+        If we add a charger, a battery pack and an amazing code to control two powerful engines, we have a platform capable of moving a person ... a hoverboard."
+        yPadding="py-2"
+      />
+      <Section
+        description="If we place it in a solid base with different sensors, all controlled by ROS, we have HTB!"
+        yPadding="py-2"
+      />
+      <div className="mb-4 text-center">
+        <div className="mt-4 text-xl text-gray-500 md:px-20">
+          HTB is born from the 
+          <a className="text-white" href="https://github.com/alex-makarov/robaka-ros"> Robaka </a>
+          project, a Mobile
+          <a className="text-white" href="https://www.ros.org/"> ROS </a>
+          TestBed.
+        </div>
+      </div>
+
+
+      <Section
+        yPadding="py-2"
       >
         <VerticalFeatureRow
-          title="Your title here"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-          image="https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZGFya3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          title="Caster Wheels"
+          description={casterWheelDescription}
+          image={casterPicture}
           imageAlt="First feature alt text"
         />
         <VerticalFeatureRow
-          title="Your title here"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-          image="https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZGFya3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          title="Built from a hoverboard"
+          description="Built around two really strong brushless hub motor, hoverboards are capable of moving up to 100kg in some cases"
+          image={hoverboardPicture}
           imageAlt="Second feature alt text"
           reverse="true"
         />
         <VerticalFeatureRow
-          title="Your title here"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-          image="https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZGFya3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          title="Notes"
+          description="This project is still under development. Please check for updates regulary in the main repository."
+          image={repoPicture}
           imageAlt="Third feature alt text"
+          link="https://github.com/HTB-HoverTableBot"
+          textLink="Code"
         />
       </Section>
-
+      <Section
+        title="Disclaimer"
+        description="This project comes without any warranty. It is still under development and things will change. Also as my build is not complete so far, files may not fit together as planned. You build at your own risk."
+      >
+      </Section>
+      <Footer />
     </div>
   )
 }
