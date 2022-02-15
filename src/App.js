@@ -24,7 +24,7 @@ function App() {
               From hoverboard to differential robot
             </p>
           </div>
-      <div className="mx-auto w-full sm:w-1/2 p-6">
+      <div className="mx-auto w-full sm:w-3/4 p-6">
         <img src={headerPicture} alt="alt text" />
       </div>
         </main>
